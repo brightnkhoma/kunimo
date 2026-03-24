@@ -184,7 +184,7 @@ export default function HomePage({ incidents, onAddIncident }: HomePageProps) {
         {/* ── Live Feed ── */}
         <div className="px-4 py-2.5 border-b border-slate-700/50 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shrink-0" />
-          <span className="text-[10px] uppercase tracking-widest text-slate-500 font-mono">Live Feed</span>
+          <span className="text-[10px] uppercase tracking-widest text-slate-500 font-mono">Live Feeds</span>
         </div>
         <div className="flex-1 overflow-y-auto min-h-0 px-3 py-2 flex flex-col gap-2">
           {[...incidents].reverse().map(inc => (
