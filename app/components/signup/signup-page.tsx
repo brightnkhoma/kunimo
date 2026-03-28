@@ -74,7 +74,7 @@ export const SignUp = () => {
             const success = await api.user.signUp(signUpProps);
             
             if (success) {
-                router.push("/login?registered=true");
+                router.replace("/login");
             } else {
                 setError("Registration failed. Please try again.");
             }

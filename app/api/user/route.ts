@@ -1,6 +1,6 @@
 import { isAdmin, login,me,signUp } from "@/app/lib/server/endPoint/user";
-import { NextRequest } from "next/server";
-
+import { NextRequest, NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
 export async function  POST(req : NextRequest) {
     const data = await req.json();
@@ -17,5 +17,10 @@ export async function  GET(req : NextRequest) {
         case "admin": return await isAdmin();
         case "me": return await me()
     }
+       
+}
+export async function  DELETE(req : NextRequest) {
+    (await cookies()).delete("kunimo");
+    return NextResponse.json({success : true})
        
 }

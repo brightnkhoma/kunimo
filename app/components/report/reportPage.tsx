@@ -131,32 +131,32 @@ export const ReportPage = () => {
         
         try {
             
-            // const uploadedImages = [];
+            const uploadedImages = [];
             // for (const file of imageFiles) {
             //     const formData = new FormData();
             //     formData.append("image", file);
-            //     // const uploaded = await api.upload.uploadImage(formData);
-            //     // uploadedImages.push({ uri: uploaded.url, description: "" });
+            //     const uploaded = await api.upload.uploadImage(formData);
+            //     uploadedImages.push({ uri: uploaded.url, description: "" });
             // }
             
-            // const reportData: Report = {
-            //     ...report,
-            //     projectId: id,
-            //     date: new Date().toISOString(),
-            //     images: uploadedImages,
-            //     status: "pending"
-            // };
+            const reportData: Report = {
+                ...report,
+                projectId: id,
+                date: new Date().toISOString(),
+                images: [],
+                status: "pending"
+            };
             
-            // const success = await api.report.report(reportData);
+            const success = await api.report.report(reportData);
             
-            // if (success) {
-            //     showToast("success", { 
-            //         description: "Thank you for contributing to this project, your report has been recorded." 
-            //     });
-            //     router.push(`/projects/${id}`);
-            // } else {
-            //     showToast("error", { description: "Failed to send report, please try again later." });
-            // }
+            if (success) {
+                showToast("success", { 
+                    description: "Thank you for contributing to this project, your report has been recorded." 
+                });
+                router.push(`/projects/${id}`);
+            } else {
+                showToast("error", { description: "Failed to send report, please try again later." });
+            }
         } catch (error) {
             showToast("error", { description: "Something went wrong" });
         } finally {

@@ -78,7 +78,7 @@ export const Wrapper = ({children} : {children : ReactNode})=>{
 
 
     return(
-        <KunimoContext.Provider value={{user,api : server,selectedReport,setSelectedReport,components,setComponents,aggregates,isExtractingAggregate,loadingAggregates,reports,extractAggregate,onGetAggregates,extractedAggregates,isCollapsed,setIsCollapsed,centre,setCentre,isAdmin,isAuthenticating}}>
+        <KunimoContext.Provider value={{user,api : server,selectedReport,setSelectedReport,components,setComponents,aggregates,isExtractingAggregate,loadingAggregates,reports,extractAggregate,onGetAggregates,extractedAggregates,isCollapsed,setIsCollapsed,centre,setCentre,isAdmin,isAuthenticating,refresh}}>
             {children}
         </KunimoContext.Provider>
     )

@@ -46,7 +46,7 @@ export const MapSideBar = () => {
       <button
         onClick={toggleSidebar}
         className={cn(
-          "fixed z-50 bg-background border rounded-r-lg shadow-md p-2 hover:bg-accent transition-all duration-300",
+          "fixed z-50 bg-white border rounded-r-lg shadow-md p-2 hover:bg-accent transition-all duration-300",
           isCollapsed ? "left-0 top-1/2 -translate-y-1/2" : "left-96 top-1/2 -translate-y-1/2",
           isMobile && !isCollapsed && "hidden"
         )}
@@ -61,7 +61,7 @@ export const MapSideBar = () => {
       
       <div
         className={cn(
-          "h-full bg-background border-r shadow-sm flex flex-col transition-all duration-300 z-40",
+          "h-full bg-white border-r shadow-sm flex flex-col transition-all duration-300 z-40",
           isCollapsed ? "w-0 overflow-hidden border-r-0" : "w-80 md:w-96",
           isMobile && !isCollapsed && "fixed inset-y-0 left-0 z-50 shadow-2xl"
         )}

@@ -34,11 +34,12 @@ export interface UserLocation {
 }
 
 export const Navigation = () => {
-  const { user } = useApp();
+  const { user,api } = useApp();
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const goToLogin = () => {
+  const goToLogin =async () => {
+    await api.user.logout();
     router.push("/login");
   };
 
@@ -99,14 +100,6 @@ export const Navigation = () => {
                       <p className="text-xs text-gray-500">{user.email}</p>
                     </div>
                   </DropdownMenuLabel>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => router.push("/profile")} className="text-sm">
-                    Profile
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => router.push("/settings")} className="text-sm">
-                    Settings
-                  </DropdownMenuItem>
-                  <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="text-sm text-gray-500">
                     Log out
                   </DropdownMenuItem>

@@ -33,7 +33,8 @@ setIsCollapsed: Dispatch<SetStateAction<boolean>>;
  centre: LatLng | null;
  setCentre: Dispatch<SetStateAction<LatLng | null>>;
  isAdmin: boolean;
- isAuthenticating: boolean
+ isAuthenticating: boolean;
+ refresh: () => Promise<void>
  
 
 };
@@ -72,7 +73,10 @@ const initialState : kunimoContextProps = {
         throw new Error("Function not implemented.");
     },
     isAdmin: false,
-    isAuthenticating: false
+    isAuthenticating: false,
+    refresh: function (): Promise<void> {
+        throw new Error("Function not implemented.");
+    }
 };
 
 const KunimoContext = createContext(initialState);

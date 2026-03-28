@@ -11,7 +11,7 @@ import { Loader2, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 
 export const LoginPage = () => {
-    const { api } = useApp();
+    const { api,refresh } = useApp();
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
@@ -31,6 +31,7 @@ export const LoginPage = () => {
         try {
             const success = await api.user.login({ email, password });
             if (success) {
+                await refresh();
                 router.replace("/");
             } else {
                 setError("Invalid email or password");

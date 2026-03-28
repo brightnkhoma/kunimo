@@ -22,6 +22,10 @@ export class UserManager{
         }
         return null
     }
+    async logout(){
+        const res = await axios.delete("/api/user");
+        return resReturn(res)
+    }
 
     async isAsdmin(){
           const res = await axios.get("/api/user",{params : {type : "admin"}});
