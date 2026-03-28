@@ -146,7 +146,7 @@ export const AggregatePanel = () => {
                         </div>
                         
                         
-                        {isExpanded && (
+                        {/* {isExpanded && (
                             <div className="border-t bg-gray-50 p-2 space-y-1">
                                 {aggregate.reports.map((reportId, idx) => (
                                     <div 
@@ -163,7 +163,7 @@ export const AggregatePanel = () => {
                                     </div>
                                 ))}
                             </div>
-                        )}
+                        )} */}
                     </div>
                 )
             })}

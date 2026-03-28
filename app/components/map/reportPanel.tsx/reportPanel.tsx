@@ -110,9 +110,9 @@ export const ReportPanel = ({ report }: { report: Report }) => {
               <StatusIcon className="h-3 w-3 inline mr-1" />
               {statusConfig.label}
             </span>
-            <span className="text-xs text-gray-400 font-mono">
+            {/* <span className="text-xs text-gray-400 font-mono">
               #{report.id.slice(0, 8)}
-            </span>
+            </span> */}
           </div>
           <p className="text-xs text-gray-500">
             {formatDate(report.date)}
